@@ -30,7 +30,13 @@ const router = require('express').Router();
   /* ===============================================================
      Route to get user's public profile data
   =============================================================== */
-  //router.get('/publicProfile/:username', validateToken, authController.publicProfile);
+//   router.get('/publicProfile/:username', validateToken, authController.publicProfile);
+
+   
+  /* ===============================================================
+     Route to send mail
+  =============================================================== */
+  router.get('/sendmail', authController.sendmail);
 
 
 module.exports = router;
