@@ -3,9 +3,11 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var cors = require('cors')
+const mongoose = require('mongoose'); // Node Tool for MongoDB
+const config = require('./config/config'); // Mongoose Config
+var authRouter = require('./routes/auth.route')
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
 
 var app = express();
 
@@ -13,18 +15,34 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
+app.use(cors())
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+// connect MongoDB
+mongoose.Promise = global.Promise;
+mongoose.connect(config.URI_MONGO, {
+  useUnifiedTopology: true,
+  useNewUrlParser: true,
+  useCreateIndex: true,
+}, (err) => {
+  // Check if database was able to connect
+  if (err) {
+    console.log('Could NOT connect to database: ', err); // Return error message
+  } else {
+    console.log('Connected to MONGO' ); // Return success message
+  }
+});
+
+
+app.use('/api/v1/users', authRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  next(createError(404));
+  next(createError(404, 'test'));
 });
 
 // error handler
