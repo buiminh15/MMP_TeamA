@@ -22,7 +22,6 @@ import { MatCheckboxModule} from '@angular/material/checkbox';
     AppComponent,
     LoginComponent,
     SignupComponent,
-  
   ],
   imports: [
     BrowserModule,
