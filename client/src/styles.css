@@ -38,6 +38,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 
+.content {
+    background-color: aqua;
+
+}
+
+
 .login-form {
     position: initial;
     justify-content: space-between;
