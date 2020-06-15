@@ -1,6 +1,7 @@
 
 
 .login-form {
+    color: rgb(245, 230, 230);
     position: initial;
     justify-content: space-between;
     display: inline-block;
@@ -11,17 +12,16 @@
 }
 
 .login-card {
-    background-color: #FFFFFF;
-    height: 350px;
-    width: 400px;
+    background-color: rgb(178,0,73);
+    height: 390px;
+    width: 490px;
     position: absolute; left: 700px; top: 200px;
+    color: rgb(230, 212, 212);
     
 }
 
 .form-group .form-control {
-    width: 150%;
     justify-self: center;
-    
 }
 
 .form-control {
@@ -35,11 +35,40 @@
     flex: 1 1 auto;
     justify-content: space-between;
     padding: -10px 40px;
-    color: black;
+    color: rgb(250, 250, 250);
     font-weight: lighter;
     
 }
 
 .form-header {
-    color: black;
+    color: rgb(255, 255, 255);
+}
+
+
+.sub-form-footer {
+    color: rgb(255, 255, 255);
+    font-family: sans-serif ;
+    font-weight: lighter;
+    justify-content: space-between;
+}
+
+.mat-input {
+    background-color: black;
+}
+
+.mat-input-wrapper {
+    background: rgb(248, 246, 246);
+}
+
+.mat-input-container {
+    background: rgb(241, 238, 238);
+}
+
+.forgot-pass {
+    
+    color: blanchedalmond;
+}
+
+a {
+    color: white;
 }
