@@ -1,0 +1,39 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.toolbar-banner{
+    flex: 1 1 auto;
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    padding: 30px, 10%;
+}
+
+.toolbar-item-heading {
+    display:inline-block;
+}
+
+.toolbar-item-menu {
+    border-radius: 50%;
+    padding-top: 9px 25px;
+    display:inline-block;
+}
+
+.toolbar-item-search{
+    border-radius: 50%;
+    padding-top: 9px 25px;
+    display:inline-block;
+    transition: all 0.3s ease 0;
+}
+
